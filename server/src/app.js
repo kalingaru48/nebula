@@ -10,11 +10,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-app.get('/status', (req, res)=>{
+app.post('/register', (req, res)=>{
     res.send({
-        message: 'hello word!'
+        message: `Hello ${req.body.email}!`
     })
 });
 
 app.listen(process.env.PORT || 8082)
-console.log('Running')
